@@ -37,25 +37,25 @@ class _BMICalculatorPageState extends State<BMICalculatorPage> {
       bmi = weight / ((height / 100) * (height / 100));
 
       if (bmi < 16.0) {
-        bmiCategory = "Severely Underweight";
+        bmiCategory = "Yuqori vazn yetishmaslik";
         bmiColor = Colors.blue;
       } else if (bmi < 18.5) {
-        bmiCategory = "Underweight";
+        bmiCategory = "Vazn yetishmaslik";
         bmiColor = Colors.lightBlue;
       } else if (bmi < 25.0) {
         bmiCategory = "Normal";
         bmiColor = Colors.green;
       } else if (bmi < 30.0) {
-        bmiCategory = "Overweight";
+        bmiCategory = "Ortiqcha vazn";
         bmiColor = Colors.yellow;
       } else if (bmi < 35.0) {
-        bmiCategory = "Obese Class I";
+        bmiCategory = "I toifa semizlik";
         bmiColor = Colors.orange;
       } else if (bmi < 40.0) {
-        bmiCategory = "Obese Class II";
+        bmiCategory = "II toifa semizlik";
         bmiColor = Colors.deepOrange;
       } else {
-        bmiCategory = "Obese Class III";
+        bmiCategory = "III toifa semizlik";
         bmiColor = Colors.red;
       }
     });
@@ -65,7 +65,7 @@ class _BMICalculatorPageState extends State<BMICalculatorPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('BMI Calculator'),
+        title: Text('BMI hisoblovchi'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -73,7 +73,7 @@ class _BMICalculatorPageState extends State<BMICalculatorPage> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Text(
-              'Height: ${height.toStringAsFixed(1)} cm',
+              'Balandlik: ${height.toStringAsFixed(1)} sm',
               style: TextStyle(fontSize: 18.0),
             ),
             Slider(
@@ -87,7 +87,7 @@ class _BMICalculatorPageState extends State<BMICalculatorPage> {
               },
             ),
             Text(
-              'Weight: ${weight.toStringAsFixed(1)} kg',
+              'Vazn: ${weight.toStringAsFixed(1)} kg',
               style: TextStyle(fontSize: 18.0),
             ),
             Slider(
@@ -101,7 +101,7 @@ class _BMICalculatorPageState extends State<BMICalculatorPage> {
               },
             ),
             Text(
-              'Age: $age years',
+              'Yosh: $age',
               style: TextStyle(fontSize: 18.0),
             ),
             Slider(
@@ -117,7 +117,7 @@ class _BMICalculatorPageState extends State<BMICalculatorPage> {
             SizedBox(height: 20.0),
             ElevatedButton(
               onPressed: calculateBMI,
-              child: Text('Calculate BMI'),
+              child: Text('BMIni hisoblash'),
             ),
             SizedBox(height: 20.0),
             Center(
